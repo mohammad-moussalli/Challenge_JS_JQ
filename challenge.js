@@ -57,28 +57,7 @@ function randomButton(){
             buttons_memory.push(button);
             console.log(buttons_memory);
         }
-        for(j = 0; j < buttons_memory.length; j++){
-            if(buttons_memory[j] == document.getElementById("blue")){
-                document.getElementById("blue").addEventListener("click", youWin);
-            }else{
-                document.getElementById("blue").addEventListener("click", youLose);
-            }
-            if(buttons_memory[j] == document.getElementById("green")){
-                document.getElementById("green").addEventListener("click", youWin);
-            }else{
-                document.getElementById("green").addEventListener("click", youLose);
-            }
-            if(buttons_memory[j] == document.getElementById("red")){
-                document.getElementById("red").addEventListener("click", youWin);
-            }else{
-                document.getElementById("red").addEventListener("click", youLose);
-            }
-            if(buttons_memory[j] == document.getElementById("yellow")){
-                document.getElementById("yellow").addEventListener("click", youWin);
-            }else{
-                document.getElementById("yellow").addEventListener("click", youLose);
-            }
-        }
+        continuePlaying(buttons_memory);
     }
 }
 
@@ -105,10 +84,47 @@ function youLose(){
     wrong_audio.play();
     document.getElementById("title").innerHTML = "Game Over, Press Any Key to Restart";
 }
-function memoryButtons(randomButton){
-    var memory = randomButton;
-    buttons_memory.push(memory);
-    return buttons_memory;
+
+function pressedButton(){
+    var pressed_buttons = document.getElementsByTagName("button");
+    for (var i = 0; i < pressed_buttons.length; i++){
+        pressed_buttons[i].style.backgroundColor = "grey";
+        pressed_buttons[i].style.boxShadow = "0px 0px 20px white"
+    }
+}
+
+function continuePlaying(buttons_memory){
+    for(j = 0; j < buttons_memory.length; j++){
+        if(buttons_memory[j] == document.getElementById("blue")){
+            document.getElementById("blue").addEventListener("click", youWin);
+            document.getElementById("blue").addEventListener("click", pressedButton);
+        }else{
+            document.getElementById("blue").addEventListener("click", youLose);
+            document.getElementById("blue").addEventListener("click", pressedButton);
+        }
+        if(buttons_memory[j] == document.getElementById("green")){
+            document.getElementById("green").addEventListener("click", youWin);
+            document.getElementById("green").addEventListener("click", pressedButton);
+        }else{
+            document.getElementById("green").addEventListener("click", youLose);
+            document.getElementById("green").addEventListener("click", pressedButton);
+        }
+        if(buttons_memory[j] == document.getElementById("red")){
+            document.getElementById("red").addEventListener("click", youWin);
+            document.getElementById("red").addEventListener("click", pressedButton);
+        }else{
+            document.getElementById("red").addEventListener("click", youLose);
+            document.getElementById("red").addEventListener("click", pressedButton);
+        }
+        if(buttons_memory[j] == document.getElementById("yellow")){
+            document.getElementById("yellow").addEventListener("click", youWin);
+            document.getElementById("yellow").addEventListener("click", pressedButton);
+        }else{
+            document.getElementById("yellow").addEventListener("click", youLose);
+            document.getElementById("yellow").addEventListener("click", pressedButton);
+        }
+    }
+
 }
 
 

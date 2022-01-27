@@ -2,6 +2,8 @@ var start_game = false;
 var win = false;
 var continue_playing = false;
 var level = 1;
+var buttons_memory = [];
+
 
 document.getElementsByTagName("body")[0].style.backgroundColor = "#021c39";
 
@@ -24,53 +26,58 @@ function randomButton(){
         if(random == 1){
             var blue_audio = new Audio('sounds/blue.mp3');
             blue_audio.play();
-            button = document.getElementById("blue").style.opacity = 0.5;
+            button = document.getElementById("blue");
+            button.style.opacity = 0.5;
             setTimeout(() => {document.getElementById("blue").style.opacity = 1;
             }, 100);
+            buttons_memory.push(button);
         }else if(random == 2){
             var green_audio = new Audio('sounds/green.mp3');
             green_audio.play();
-            button = document.getElementById("green").style.opacity = 0.5;
+            button = document.getElementById("green");
+            button.style.opacity = 0.5;
             setTimeout(() => {document.getElementById("green").style.opacity = 1;
             }, 100);
+            buttons_memory.push(button);
         }else if(random == 3){
             var red_audio = new Audio('sounds/red.mp3');
             red_audio.play();
-            button = document.getElementById("red").style.opacity = 0.5;
+            button = document.getElementById("red");
+            button.style.opacity = 0.5;
             setTimeout(() => {document.getElementById("red").style.opacity = 1;
             }, 100);
+            buttons_memory.push(button);
         }else{
             var yellow_audio = new Audio('sounds/yellow.mp3');
             yellow_audio.play();
-            button = document.getElementById("yellow").style.opacity = 0.5;
+            button = document.getElementById("yellow");
+            button.style.opacity = 0.5;
             setTimeout(() => {document.getElementById("yellow").style.opacity = 1;
             }, 100);
+            buttons_memory.push(button);
+            console.log(buttons_memory);
         }
-       
-        var blue_button = 1;
-        var green_button = 2;
-        var red_button = 3;
-        var yellow_button = 4;
-
-        if(random == blue_button){
-            document.getElementById("blue").addEventListener("click", youWin);
-        }else{
-            document.getElementById("blue").addEventListener("click", youLose);
-        }
-        if(random == green_button){
-            document.getElementById("green").addEventListener("click", youWin);
-        }else{
-            document.getElementById("green").addEventListener("click", youLose);
-        }
-        if(random == red_button){
-            document.getElementById("red").addEventListener("click", youWin);
-        }else{
-            document.getElementById("red").addEventListener("click", youLose);
-        }
-        if(random == yellow_button){
-            document.getElementById("yellow").addEventListener("click", youWin);
-        }else{
-            document.getElementById("yellow").addEventListener("click", youLose);
+        for(j = 0; j < buttons_memory.length; j++){
+            if(buttons_memory[j] == document.getElementById("blue")){
+                document.getElementById("blue").addEventListener("click", youWin);
+            }else{
+                document.getElementById("blue").addEventListener("click", youLose);
+            }
+            if(buttons_memory[j] == document.getElementById("green")){
+                document.getElementById("green").addEventListener("click", youWin);
+            }else{
+                document.getElementById("green").addEventListener("click", youLose);
+            }
+            if(buttons_memory[j] == document.getElementById("red")){
+                document.getElementById("red").addEventListener("click", youWin);
+            }else{
+                document.getElementById("red").addEventListener("click", youLose);
+            }
+            if(buttons_memory[j] == document.getElementById("yellow")){
+                document.getElementById("yellow").addEventListener("click", youWin);
+            }else{
+                document.getElementById("yellow").addEventListener("click", youLose);
+            }
         }
     }
 }
@@ -85,6 +92,7 @@ function youWin(){
 
 function youLose(){
     win = false;
+    buttons_memory = [];
     continue_playing = false;
     level = 1;
     document.getElementsByTagName("body")[0].style.backgroundColor = "red";
@@ -96,6 +104,11 @@ function youLose(){
     var wrong_audio = new Audio('sounds/wrong.mp3');
     wrong_audio.play();
     document.getElementById("title").innerHTML = "Game Over, Press Any Key to Restart";
+}
+function memoryButtons(randomButton){
+    var memory = randomButton;
+    buttons_memory.push(memory);
+    return buttons_memory;
 }
 
 

@@ -46,8 +46,33 @@ function randomButton(){
             setTimeout(() => {document.getElementById("yellow").style.opacity = 1;
             }, 100);
         }
-    }   
-    return random;
+       
+        var blue_button = 1;
+        var green_button = 2;
+        var red_button = 3;
+        var yellow_button = 4;
+
+        if(random == blue_button){
+            document.getElementById("blue").addEventListener("click", youWin);
+        }else{
+            document.getElementById("blue").addEventListener("click", youLose);
+        }
+        if(random == green_button){
+            document.getElementById("green").addEventListener("click", youWin);
+        }else{
+            document.getElementById("green").addEventListener("click", youLose);
+        }
+        if(random == red_button){
+            document.getElementById("red").addEventListener("click", youWin);
+        }else{
+            document.getElementById("red").addEventListener("click", youLose);
+        }
+        if(random == yellow_button){
+            document.getElementById("yellow").addEventListener("click", youWin);
+        }else{
+            document.getElementById("yellow").addEventListener("click", youLose);
+        }
+    }
 }
 
 function youWin(){
@@ -55,6 +80,7 @@ function youWin(){
     continue_playing = true;
     level += 1;
     document.getElementById("title").innerHTML = `Level ${level}`;
+    randomButton();
 }
 
 function youLose(){
@@ -72,28 +98,7 @@ function youLose(){
     document.getElementById("title").innerHTML = "Game Over, Press Any Key to Restart";
 }
 
-var blue_button = 1;
-var green_button = 2;
-var red_button = 3;
-var yellow_button = 4;
 
-if(randomButton() == blue_button){
-    document.getElementById("blue").addEventListener("click", youWin);
-}else{
-    document.getElementById("blue").addEventListener("click", youLose);
-}
-if(randomButton() == green_button){
-    document.getElementById("green").addEventListener("click", youWin);
-}else{
-    document.getElementById("green").addEventListener("click", youLose);
-}
-if(randomButton() == red_button){
-    document.getElementById("red").addEventListener("click", youWin);
-}else{
-    document.getElementById("red").addEventListener("click", youLose);
-}
-if(randomButton() == yellow_button){
-    document.getElementById("yellow").addEventListener("click", youWin);
-}else{
-    document.getElementById("yellow").addEventListener("click", youLose);
-}
+    
+
+

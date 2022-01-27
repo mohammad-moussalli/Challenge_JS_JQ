@@ -13,7 +13,6 @@ function startGame(){
         start_game = true;
         document.getElementById("title").innerHTML = `Level ${level}`;
         randomButton();
-        win = true;
     }
 }
 
@@ -21,17 +20,9 @@ document.addEventListener("keydown", startGame);
 
 function randomButton(){
     if(continue_playing == true){
-        var random = Math.floor(Math.random() * 4) + 1;
+        var random = Math.floor(Math.random() * 5);
         var button = 1;
-        if(random == 1){
-            var blue_audio = new Audio('sounds/blue.mp3');
-            blue_audio.play();
-            button = document.getElementById("blue");
-            button.style.opacity = 0.5;
-            setTimeout(() => {document.getElementById("blue").style.opacity = 1;
-            }, 100);
-            buttons_memory.push(button);
-        }else if(random == 2){
+        if(random == 0){
             var green_audio = new Audio('sounds/green.mp3');
             green_audio.play();
             button = document.getElementById("green");
@@ -39,7 +30,7 @@ function randomButton(){
             setTimeout(() => {document.getElementById("green").style.opacity = 1;
             }, 100);
             buttons_memory.push(button);
-        }else if(random == 3){
+        }else if(random == 1){
             var red_audio = new Audio('sounds/red.mp3');
             red_audio.play();
             button = document.getElementById("red");
@@ -47,7 +38,7 @@ function randomButton(){
             setTimeout(() => {document.getElementById("red").style.opacity = 1;
             }, 100);
             buttons_memory.push(button);
-        }else{
+        }else if(random == 2){
             var yellow_audio = new Audio('sounds/yellow.mp3');
             yellow_audio.play();
             button = document.getElementById("yellow");
@@ -56,6 +47,15 @@ function randomButton(){
             }, 100);
             buttons_memory.push(button);
             console.log(buttons_memory);
+        }else{
+            var blue_audio = new Audio('sounds/blue.mp3');
+            blue_audio.play();
+            button = document.getElementById("blue");
+            button.style.opacity = 0.5;
+            setTimeout(() => {document.getElementById("blue").style.opacity = 1;
+            }, 100);
+            buttons_memory.push(button);
+            
         }
         continuePlaying(buttons_memory);
     }

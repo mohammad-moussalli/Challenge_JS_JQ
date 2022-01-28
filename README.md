@@ -4,7 +4,7 @@
 
 ### Connect with me:
 
-[<img align="left" alt="Mohammad-Moussalli | LinkedIn" width="60px" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>][linkedin]
+[<img align="left" alt="Mohammad-Moussalli | LinkedIn" width="100px" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>][linkedin]
 
 <br/>
 <br/>
@@ -18,6 +18,11 @@
 ---
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mohammad-moussalli)](https://github.com/anuraghazra/github-readme-stats)
+
+---
+
+#### This repository represents a Simon Game:
+##### The game creates a series of tones and lights and requires a user to repeat the sequence. If the user succeeds, the series becomes progressively longer and more complex. Once the user fails or the time limit runs out, the game is over.
 
 
 

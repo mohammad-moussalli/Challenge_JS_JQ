@@ -24,6 +24,8 @@
 #### This repository represents a Simon Game:
 ##### The game creates a series of tones and lights and requires a user to repeat the sequence. If the user succeeds, the series becomes progressively longer and more complex. Once the user fails or the time limit runs out, the game is over.
 
+##### You can find a demo video of the game below.
 
+https://user-images.githubusercontent.com/97596380/151604779-99515dd8-8874-404f-9874-c10a6662bbdc.mov
 
 

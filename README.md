@@ -11,5 +11,9 @@
 
 [linkedin]: https://www.linkedin.com/in/mohamadmoussalli/
 
+---
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mohammad-moussalli)](https://github.com/anuraghazra/github-readme-stats)
+
 
 
